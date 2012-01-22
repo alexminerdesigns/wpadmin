@@ -1,0 +1,751 @@
+/**
+ * @file
+ * HTML Element Styling
+ */
+
+/* =============================================================================
+   HTML5 display definitions
+   ========================================================================== */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+/* =============================================================================
+   Base
+   ========================================================================== */
+
+/*
+ * 1. Correct text resizing oddly in IE6/7 when body font-size is set using em units
+ * 2. Force vertical scrollbar in non-IE
+ * 3. Prevent iOS text size adjust on device orientation change, without disabling user zoom: h5bp.com/g
+ */
+
+html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body { margin: 0; font-size: 81.3%; line-height: 1.231; }
+
+body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+
+/* 
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection declarations have to be separate
+ * Also: hot pink! (or customize the background color to match your design)
+ */
+
+::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+
+
+/* =============================================================================
+   Links
+   ========================================================================== */
+
+a { color: #00e; }
+a:visited { color: #551a8b; }
+a:hover { color: #06e; }
+a:focus { outline: thin dotted; }
+
+/* Improve readability when focused and hovered in all browsers: h5bp.com/h */
+a:hover, a:active { outline: 0; }
+
+
+/* =============================================================================
+   Typography
+   ========================================================================== */
+
+abbr[title] { border-bottom: 1px dotted; }
+
+b, strong { font-weight: bold; }
+
+blockquote { margin: 1em 40px; }
+
+dfn { font-style: italic; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* Redeclare monospace font family: h5bp.com/j */
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+/* Improve readability of pre-formatted text in all browsers */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+
+small { font-size: 85%; }
+
+/* Position subscript and superscript content without affecting line-height: h5bp.com/k */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* =============================================================================
+   Lists
+   ========================================================================== */
+
+ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+dd { margin: 0 0 0 40px; }
+nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
+
+
+/* =============================================================================
+   Embedded content
+   ========================================================================== */
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/*
+ * Correct overflow not hidden in IE9 
+ */
+
+svg:not(:root) { overflow: hidden; }
+
+
+/* =============================================================================
+   Figures
+   ========================================================================== */
+
+figure { margin: 0; }
+
+
+/* =============================================================================
+   Forms
+   ========================================================================== */
+
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+label { cursor: pointer; }
+legend { border: 0; *margin-left: -7px; padding: 0; }
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+button, input { line-height: normal; *overflow: visible; }
+table button, table input { *overflow: auto; }
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+textarea,select, input[type="text"], input[type="password"], input[type="file"], input[type="reset"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"] {
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #BBB;
+	margin: 1px;
+	padding: 3px;
+}
+
+/* =============================================================================
+   Tables
+   ========================================================================== */
+
+table {border-collapse: separate; border-spacing: 0; }
+td { vertical-align: top; }
+
+
+/* ==|== primary styles =====================================================
+   Author: 
+   ========================================================================== */
+
+   tr.even, tr.odd {
+background: none;
+border:none;
+padding: 0;
+}
+   
+/* Admin Tables */
+#wpcontent table, div.admin-panel { width:100%; border-color: #DFDFDF;
+background-color: #F9F9F9; -webkit-border-radius: 3px;
+border-radius: 3px; border-spacing: 0;
+border-width: 1px; padding:0px;
+border-style: solid;}
+#wpcontent table td {padding: 5px 10px;}
+#wpcontent table th a {display: block; color: #21759B;
+overflow: hidden; text-decoration:none;
+}
+
+#wpcontent table  td a {color: #21759B; text-decoration:none;}
+#wpcontent table  td a:hover {color: #D54E21;}
+#wpcontent  td ,#wpcontent  th {
+border-top-color: white;
+border-bottom-color: #DFDFDF;
+border-width: 1px 0;
+border-style: solid;
+}
+#wpcontent th img {margin: -4px 0 0 5px;}
+
+#wpcontent thead th:first-of-type {
+-webkit-border-top-left-radius: 3px;
+border-top-left-radius: 3px;
+}
+#wpcontent fieldset {margin: 6px 0px;}
+
+
+/* Submit buttons and link buttons */
+.action-links {
+	padding:0px;
+}
+
+.action-links li {
+	list-style:none;
+	display: inline;
+}
+
+input.form-submit, #wpcontent .action-links li a , #views-display-menu-tabs li a{
+	text-decoration: none;
+	font-size: 12px!important;
+	line-height: 13px;
+	padding: 3px 8px;
+	cursor: pointer;
+	border-width: 1px;
+	border-style: solid;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	background: #F2F2F2 url(../images/white-grad.png) repeat-x scroll left top;
+	text-shadow: rgba(255, 255, 255, 1) 0 1px 0;
+	border-color: #BBB;
+	color: #464646; 
+}
+
+input.form-submit:hover , #wpcontent .action-links li a:hover, .views-display-menu-tabs li a:hover {
+	color: black;
+	border-color: #666;
+}
+
+#views-display-menu-tabs li.active a {
+	color: black;
+}
+
+.fieldset-legend {
+	font-weight: bold;
+	font-size: 84.6%;
+}
+
+legend {
+	padding-bottom: 8px;
+}
+
+
+
+#wpcontent table th, div.admin-panel h3 {
+	padding: 7px 7px 8px;
+	font-family: Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+	text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
+	font-weight: normal;
+	margin: 0px;
+}
+
+div.admin-panel {
+	margin-bottom:1em;
+	background: white;
+}
+dl.admin-list  {
+	margin: 6px 0px;
+}
+dl.admin-list dt {margin-top:10px;} 
+dl.admin-list dd { margin:0px; font-size:92.3%}
+
+div.admin .right {
+float: right;
+width: 49%;
+margin-right: 0em;
+}
+
+div.admin .left {
+float: left;
+width: 49%;
+margin-left: 0em;
+}
+
+
+#wpcontent tr.odd {background-color: #FCFCFC;}
+#wpcontent tr.even {background-color:transparent;}
+
+#wpcontent table th a:hover {color: #333;}
+#wpcontent table thead tr, #wpcontent table th ,.admin-panel h3{
+ background-color: #F1F1F1;
+background-image: -ms-linear-gradient(top,#f9f9f9,#ececec);
+background-image: -moz-linear-gradient(top,#f9f9f9,#ececec);
+background-image: -o-linear-gradient(top,#f9f9f9,#ececec);
+background-image: -webkit-gradient(linear,left top,left bottom,from(#f9f9f9),to(#ececec));
+background-image: -webkit-linear-gradient(top,#f9f9f9,#ececec);
+background-image: linear-gradient(top,#f9f9f9,#ececec);
+ }
+ 
+
+/* Link Color */ 
+#wpcontent a,  .messages a, #block-system-help a , a.fieldset-title {
+	color: #21759B;
+	text-decoration:none;
+ }
+
+/* Link Hover Color */
+#wpcontent a:hover, .messages a:hover, #block-system-help a:hover , a.fieldset-title:hover {
+	color: #D54E21;
+}
+ 
+ 
+.messages {
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+/* =============================================================================
+   Layout
+   ========================================================================== */
+
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+/* Tabs */
+ul.primary {
+	margin: 15px 5px 5px 5px;
+padding: 3px 0 3px 10px;
+}
+
+#wpwrap #content {
+	
+	margin-left: 0;
+	margin-right: 0px;
+	padding: 0;
+	margin-bottom: 15px;
+}
+
+#main-wrapper #main {
+float: left;
+	width: 100%;
+	}
+
+#wpbody-content {
+float: left;
+width: 100%;
+}
+#wpwrap #content #content-inner,#wpwrap  .no-sidebars #content #content-inner {
+ margin-right:15px;
+
+}
+
+
+#wpcontent {
+margin-left: 165px;
+
+height: 100%;
+}
+
+
+#wpwrap {
+height: auto;
+min-height: 100%;
+width: 100%;
+position: relative;
+}
+
+
+#adminmenuwrap {
+position: relative;
+float: left;
+}
+
+#adminmenushadow, #adminmenuback {
+background-image: url(../images/menu-shadow.png);
+background-position: top right;
+background-repeat: repeat-y;
+}
+
+#adminmenushadow {
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+width: 6px;
+z-index: 20;
+}
+
+#adminmenuback, #adminmenuwrap {
+background-color: #ECECEC;
+border-color: #CCC;
+}
+
+#adminmenuback, #adminmenuwrap {
+border-width: 0 1px 0 0;
+border-style: solid;
+}
+
+#adminmenuback {
+position: absolute;
+top: 0;
+bottom: 0;
+z-index: -1;
+}
+
+#adminmenuback, #adminmenuwrap, #adminmenu, #adminmenu .wp-submenu, #adminmenu .wp-submenu-wrap, .folded #adminmenu .wp-has-current-submenu .wp-submenu {
+width: 145px;
+}
+
+
+#adminmenu {
+clear: left;
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+#adminmenu a {
+display: block;
+line-height: 18px;
+padding: 2px 5px;
+color: #21759B;
+text-decoration:none;
+}
+
+#adminmenu ul , #adminmenu li {
+margin: 0;
+padding: 0;	
+list-style:none;
+}
+
+#adminmenu a.level-1 {
+display:none;
+}
+
+#adminmenu .level-2 ul {
+background-color: white;
+}
+
+#adminmenu a.level-2 {
+font-size: 13px;
+line-height: 18px;
+}
+
+#adminmenu li.level-2:hover > a, #adminmenu li.level-2.focused > a, #adminmenu li.level-2 > a:focus {
+background-color: #E4E4E4;
+text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+#adminmenu a.level-2, .folded #adminmenu li.level-2, #adminmenu .wp-submenu .wp-submenu-head {
+border-top-color: #F9F9F9;
+border-bottom-color: #DFDFDF;
+}
+#adminmenu a.level-2 {
+font-weight: bold;
+line-height: 18px;
+min-width: 10em;
+padding: 5px 5px;
+border-width: 1px 0 1px;
+border-style: solid;
+z-index: 30;
+position: relative;
+}
+
+#adminmenu li.level-2 {
+min-height: 29px;
+position: relative;
+}
+
+#adminmenu li.level-2.expanded a.level-2, #adminmenu li.level-2.leaf.active-trail a.level-2 {
+text-shadow: 0 -1px 0 #333;
+color: white;
+border-top-color: gray;
+border-bottom-color: #6D6D6D;
+background-color: #777;
+background-image: -ms-linear-gradient(bottom,#6d6d6d,#808080);
+background-image: -moz-linear-gradient(bottom,#6d6d6d,#808080);
+background-image: -o-linear-gradient(bottom,#6d6d6d,#808080);
+background-image: -webkit-gradient(linear,left bottom,left top,from(#6d6d6d),to(#808080));
+background-image: -webkit-linear-gradient(bottom,#6d6d6d,#808080);
+background-image: linear-gradient(bottom,#6d6d6d,#808080);
+}
+
+#adminmenu li.level-2.expanded .wp-menu-arrow , #adminmenu li.level-2.leaf.active-trail .wp-menu-arrow  {
+	display:block;
+}
+
+
+.wp-menu-arrow {
+display: none;
+cursor: auto;
+z-index: 25;
+position: absolute;
+right: 100%;
+margin: 0;
+height: 30px;
+width: 6px;
+-moz-transform: translate(146px);
+-webkit-transform: translate(146px);
+-o-transform: translate(146px);
+-ms-transform: translate(146px);
+transform: translate(146px);
+}
+
+#adminmenu .wp-menu-arrow div {
+background-color: #777;
+background-image: -ms-linear-gradient(right bottom,#6d6d6d,#808080);
+background-image: -moz-linear-gradient(right bottom,#6d6d6d,#808080);
+background-image: -o-linear-gradient(right bottom,#6d6d6d,#808080);
+background-image: -webkit-gradient(linear,right bottom,left top,from(#6d6d6d),to(#808080));
+background-image: -webkit-linear-gradient(right bottom,#6d6d6d,#808080);
+background-image: linear-gradient(right bottom,#6d6d6d,#808080);
+}
+
+#adminmenu .wp-menu-arrow div {
+position: absolute;
+top: 7px;
+left: -2px;
+width: 14px;
+height: 15px;
+-moz-transform: matrix(-0.6,1,0.6,1,0,0);
+-webkit-transform: matrix(-0.6,1,0.6,1,0,0);
+-o-transform: matrix(-0.6,1,0.6,1,0,0);
+-ms-transform: matrix(-0.6,1,0.6,1,0,0);
+transform: matrix(-0.6,1,0.6,1,0,0);
+}
+
+#adminmenu div.wp-menu-image {
+float: left;
+width: 28px;
+height: 28px;
+z-index: 40;
+position: relative;
+}
+
+#wpcontent h1.title {padding-top: 10px; margin-top:0px; margin-bottom: 5px;
+font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
+color:#464646; font-weight:normal;}
+
+
+
+
+/* =============================================================================
+   Menu Icons
+   ========================================================================== */
+
+#adminmenu .dashboard div.wp-menu-image {
+background: transparent url('../images/menu.png') no-repeat scroll -60px -33px;
+}
+
+#adminmenu .content div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -150px -33px;
+}
+#adminmenu .expanded.content div.wp-menu-image , #adminmenu .active-trail.content div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -150px -1px;
+}
+
+#adminmenu .advanced-help div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -31px -33px;
+}
+#adminmenu .expanded.advanced-help div.wp-menu-image , #adminmenu .active-trail.advanced-help div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -31px -1px;
+}
+
+
+#adminmenu .help div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -31px -33px;
+}
+#adminmenu .expanded.help div.wp-menu-image , #adminmenu .active-trail.help div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -31px -1px;
+}
+
+
+#adminmenu .reports div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -271px -33px;
+}
+#adminmenu .expanded.reports div.wp-menu-image , #adminmenu .active-trail.reports div.wp-menu-image   {
+background: transparent url('../images/menu.png') no-repeat scroll -271px -1px;
+}
+
+
+
+#adminmenu .structure div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -210px -33px;
+}
+#adminmenu .expanded.structure div.wp-menu-image , #adminmenu .active-trail.structure div.wp-menu-image   {
+background: transparent url('../images/menu.png') no-repeat scroll -210px -1px;
+}
+
+
+#adminmenu .appearance div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll 0 -33px;
+}
+#adminmenu .expanded.appearance div.wp-menu-image , #adminmenu .active-trail.appearance div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll 0 -1px;
+}
+
+#adminmenu .people div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -300px -33px;
+}
+#adminmenu .expanded.people div.wp-menu-image , #adminmenu .active-trail.people div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -300px -1px;
+}
+
+#adminmenu .modules div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -180px -33px;
+}
+#adminmenu .expanded.modules div.wp-menu-image , #adminmenu .active-trail.modules div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -180px -1px;
+}
+
+
+#adminmenu .configuration div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -240px -33px;
+}
+#adminmenu .expanded.configuration div.wp-menu-image , #adminmenu .active-trail.configuration div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -240px -1px;
+}
+
+#adminmenu ul ul {padding:5px 0px;}
+
+#adminmenu .level-3 a {
+padding-left: 12px;
+font-size: 92.3%;
+}
+
+#adminmenu  .active-trail.level-3 a {
+color: #333;
+font-weight:bold;
+}
+
+#adminmenu .level-3 ul  {
+display:none;
+}
+
+div.warning {background-color: lightYellow;
+border-color: #E6DB55; color:#333333;}
+
+/* Admin Tables */
+#wpcontent table, div.admin-panel { width:100%; border-color: #DFDFDF;
+background-color: #ffffff; -webkit-border-radius: 3px;
+border-radius: 3px; border-spacing: 0;
+border-width: 1px; padding:0px;
+border-style: solid;}
+#wpcontent table td {padding: 5px 10px; text-align: left;}
+#wpcontent table th a {display: block; color: #21759B;
+overflow: hidden; text-decoration:none;
+}
+
+#wpcontent table  td a {color: #21759B; text-decoration:none;}
+#wpcontent table  td a:hover {color: #D54E21;}
+#wpcontent  td ,#wpcontent  th {
+border-top-color: white;
+border-bottom-color: #DFDFDF;
+border-width: 1px 0;
+border-style: solid;
+}
+
+#wpcontent th img {margin: -4px 0 0 5px;}
+
+#wpcontent thead th:first-of-type {
+-webkit-border-top-left-radius: 3px;
+border-top-left-radius: 3px;
+}
+#wpcontent fieldset {margin: 6px 0px;}
+
+
+#wpcontent table th, div.admin-panel h3 {
+	padding: 7px 7px 8px;
+	font-family: Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+	text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0;
+	font-weight: normal;
+	margin: 0px;
+}
+
+
+#wpcontent tr.odd {background-color: #FCFCFC;}
+#wpcontent tr.even {background-color:transparent;}
+
+#wpcontent table th a:hover {color: #333;}
+#wpcontent table thead tr, #wpcontent table th ,.admin-panel h3{
+ background-color: #F1F1F1;
+background-image: -ms-linear-gradient(top,#f9f9f9,#ececec);
+background-image: -moz-linear-gradient(top,#f9f9f9,#ececec);
+background-image: -o-linear-gradient(top,#f9f9f9,#ececec);
+background-image: -webkit-gradient(linear,left top,left bottom,from(#f9f9f9),to(#ececec));
+background-image: -webkit-linear-gradient(top,#f9f9f9,#ececec);
+background-image: linear-gradient(top,#f9f9f9,#ececec);
+ }
+ 
+ 
+#wpcontent a,  .messages a, #block-system-help a , a.fieldset-title {
+	color: #21759B;
+	text-decoration:none;
+ }
+
+ 
+#wpcontent a:hover, .messages a:hover, #block-system-help a:hover , a.fieldset-title:hover {
+ color: #D54E21;
+ }
+ 
+ 
+
+div.description {color: #757575;}
+
+
+/* Remove shadow from the toolbar */
+#toolbar {
+	box-shadow:none;
+}
+
+.tabs.primary.clearfix::after {
+clear:none;
+}
+
+/* Fix token box */
+.token-tree {
+margin-left: 0px;
+}
+.token-tree td span {margin-left:0px !important;}
+#wpcontent .token-tree td {
+	padding:5px;
+}
+
+/* Ctools/Views */
+#views-display-menu-tabs  li.add a {
+padding-left: 18px;
+}
+
+.views-admin span.icon {
+position: absolute;
+left: 4px;
+top: 3px;
+}
+
+.views-ui-display-tab-bucket .advanced-help-link {
+padding: 0;
+margin: 8px 3px 0px 6px;
+}
+
+.views-ui-display-tab-bucket { 
+	padding-top:0px;
+}
+.views-ui-display-tab-bucket h3 {
+	background:#efefef;
+	padding-bottom: 0px;
+line-height: 200%;
+}
+.ctools-button-processed {
+	border-radius: 3px;
+}
+
+ul.primary li a {
+	border-radius: 5px 5px 0px 0px;
+	padding: 3px 10px;
+	margin-right:0px;
+}
+
+.clear {clear:both;}
