@@ -27,6 +27,10 @@ html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-
 body { margin: 0; font-size: 81.3%; line-height: 1.231; }
 
 body, button, input, select, textarea { font-family: sans-serif; color: #222; }
+select {
+padding: 2px;
+height: 2em;
+}
 
 /* 
  * Remove text-shadow in selection highlight: h5bp.com/i
@@ -34,8 +38,8 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
  * Also: hot pink! (or customize the background color to match your design)
  */
 
-::-moz-selection { background: #fe57a1; color: #fff; text-shadow: none; }
-::selection { background: #fe57a1; color: #fff; text-shadow: none; }
+::-moz-selection { background: #21759B; color: #fff; text-shadow: none; }
+::selection { background: #21759B; color: #fff; text-shadow: none; }
 
 
 /* =============================================================================
@@ -136,13 +140,43 @@ input:valid, textarea:valid {  }
 input:invalid, textarea:invalid { background-color: #f0dddd; }
 
 textarea,select, input[type="text"], input[type="password"], input[type="file"], input[type="reset"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"] {
-	-webkit-border-radius: 3px;
-	border-radius: 3px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
 	border-width: 1px;
 	border-style: solid;
 	border-color: #BBB;
 	margin: 1px;
-	padding: 3px;
+	padding: 5px;
+}
+
+input#edit-submit {
+	background-image: -ms-linear-gradient(top,#298cba,#227399);
+	background-image: -moz-linear-gradient(top,#298cba,#227399);
+	background-image: -o-linear-gradient(top,#298cba,#227399);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#298cba),to(#227399));
+	background-image: -webkit-linear-gradient(top,#298cba,#227399);
+	background-image: linear-gradient(top,#298cba,#227399);
+  color: white;
+  border-color: white;
+  text-shadow: none !important;
+  font-weight: bold;
+}
+
+input#edit-delete, input#edit-cancel {
+	background-image: -ms-linear-gradient(top,#F55652,#F41400);
+	background-image: -moz-linear-gradient(top,#F55652,#F41400);
+	background-image: -o-linear-gradient(top,#F55652,#F41400);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#F55652),to(#F41400));
+	background-image: -webkit-linear-gradient(top,#F55652,#F41400);
+	background-image: linear-gradient(top,#F55652,#F41400);
+  color: white;
+  border-color: #EE6761;
+  text-shadow: none !important;
+}
+
+#edit-actions input {
+	margin-right: 10px;
 }
 
 /* =============================================================================
@@ -205,7 +239,7 @@ input.form-submit, #wpcontent .action-links li a , #views-display-menu-tabs li a
 	text-decoration: none;
 	font-size: 12px!important;
 	line-height: 13px;
-	padding: 3px 8px;
+	padding: 6px 9px;
 	cursor: pointer;
 	border-width: 1px;
 	border-style: solid;
@@ -223,6 +257,30 @@ input.form-submit, #wpcontent .action-links li a , #views-display-menu-tabs li a
 input.form-submit:hover , #wpcontent .action-links li a:hover, .views-display-menu-tabs li a:hover {
 	color: black;
 	border-color: #666;
+}
+
+#wpcontent ul.action-links li a {
+	background: #F1F1F1;
+	font-family: sans-serif;
+	margin-left: 4px;
+	padding: 6px 10px;
+	position: relative;
+	top: -3px;
+	text-decoration: none;
+	font-size: 12px;
+	border: 1px solid #DFDFDF;
+	color: #21759B;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#wpcontent ul.action-links li:first-child a {
+	margin-left: 0;
+}
+
+#wpcontent ul.action-links li a:hover {
+	border-color: #CCC;
 }
 
 #views-display-menu-tabs li.active a {
@@ -293,10 +351,14 @@ background-image: linear-gradient(top,#f9f9f9,#ececec);
  }
 
 /* Link Hover Color */
-#wpcontent a:hover, .messages a:hover, #block-system-help a:hover , a.fieldset-title:hover {
+body.page-admin-people #content-inner .links .delete a, body.page-admin-content #content-inner .links .delete a, #wpcontent a:hover, .messages a:hover, #block-system-help a:hover , a.fieldset-title:hover {
 	color: #D54E21;
 }
- 
+
+/* Delete Link Hover Color */
+body.page-admin-people #content-inner .links .delete a:hover, body.page-admin-content #content-inner .links .delete a:hover {
+	color: #222;
+}
  
 .messages {
 	-webkit-border-radius: 3px;
@@ -456,10 +518,16 @@ position: relative;
 
 #adminmenu li.level-2 {
 min-height: 29px;
+max-height: 30px;
 position: relative;
 }
 
-#adminmenu li.level-2.expanded a.level-2, #adminmenu li.level-2.leaf.active-trail a.level-2 {
+#adminmenu li.level-2.expanded.active-trail {
+	max-height: 9999px;
+	border-bottom: 1px solid #DFDFDF;
+}
+
+#adminmenu li.level-2.expanded.active-trail a.level-2, #adminmenu li.level-2.leaf.active-trail a.level-2 {
 text-shadow: 0 -1px 0 #333;
 color: white;
 border-top-color: gray;
@@ -473,10 +541,42 @@ background-image: -webkit-linear-gradient(bottom,#6d6d6d,#808080);
 background-image: linear-gradient(bottom,#6d6d6d,#808080);
 }
 
-#adminmenu li.level-2.expanded .wp-menu-arrow , #adminmenu li.level-2.leaf.active-trail .wp-menu-arrow  {
+#adminmenu li.level-2.expanded.active-trail .wp-menu-arrow, #adminmenu li.level-2.leaf.active-trail .wp-menu-arrow  {
 	display:block;
 }
 
+#adminmenu li.level-2.expanded:not(.active-trail):hover .wp-menu-arrow div {
+	background: #E4E4E4 !important;
+	border-left: 1px solid #CCC;
+	border-bottom: 1px solid #CCC;
+}
+
+#adminmenu li.level-2.expanded:not(.active-trail):hover .wp-menu-arrow {
+	display: block;
+	z-index: 666;
+}
+
+#adminmenu li.level-2.expanded:not(.active-trail):hover > a {
+	/*background-color: white !important;*/
+}
+
+#adminmenu li.level-2.expanded:not(.active-trail) ul li a {
+padding: 6px 12px 5px 20px;
+}
+
+#adminmenu li.level-2.expanded:not(.active-trail) ul {
+	display: none;
+	position: relative;
+	left: 145px;
+	top: -30px;
+	border: 1px solid #DFDFDF;
+	padding: 0;
+	border-left: 0;
+  -moz-box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.2);
+  z-index: 555;
+}
 
 .wp-menu-arrow {
 display: none;
@@ -533,24 +633,56 @@ color:#464646; font-weight:normal;}
 
 
 /* =============================================================================
+   Pager
+   ========================================================================== */
+
+.item-list ul.pager { padding-top: 15px; }
+
+.item-list ul.pager .pager-last, .item-list ul.pager .pager-next, .item-list ul.pager .pager-first, .item-list ul.pager .pager-previous {
+	border: 1px solid #E3E3E3;
+	border-radius: 3px;
+	background-color: #EEE;
+	padding: 3px 0;
+}
+
+.item-list ul.pager .pager-last a, .item-list ul.pager .pager-next a, .item-list ul.pager .pager-first a, .item-list ul.pager .pager-previous a {
+	font-size: 0;
+}
+
+.item-list ul.pager .pager-last a:after, .item-list ul.pager .pager-next a:after, .item-list ul.pager .pager-first a:after, .item-list ul.pager .pager-previous a:after {
+	border-top: 1px solid #FFF;
+	padding: 2px 6px;
+	font-size: 13px;
+}
+
+.pager .pager-first a:after { content: "«";  }
+.pager .pager-previous a:after { content: "‹";  }
+.pager .pager-next a:after { content: "›";  }
+.pager .pager-last a:after { content: "»";  }
+
+
+/* =============================================================================
    Menu Icons
    ========================================================================== */
 
 #adminmenu .dashboard div.wp-menu-image {
 background: transparent url('../images/menu.png') no-repeat scroll -60px -33px;
 }
+#adminmenu .dashboard:hover div.wp-menu-image, #adminmenu .expanded.dashboard.active-trail div.wp-menu-image , #adminmenu .active-trail.dashboard div.wp-menu-image  {
+background: transparent url('../images/menu.png') no-repeat scroll -60px -1px;
+}
 
 #adminmenu .content div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -150px -33px;
 }
-#adminmenu .expanded.content div.wp-menu-image , #adminmenu .active-trail.content div.wp-menu-image  {
+#adminmenu .content:hover div.wp-menu-image, #adminmenu .expanded.content.active-trail div.wp-menu-image , #adminmenu .active-trail.content div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -150px -1px;
 }
 
 #adminmenu .advanced-help div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -31px -33px;
 }
-#adminmenu .expanded.advanced-help div.wp-menu-image , #adminmenu .active-trail.advanced-help div.wp-menu-image  {
+#adminmenu .advanced-help:hover div.wp-menu-image, #adminmenu .expanded.advanced-help.active-trail div.wp-menu-image , #adminmenu .active-trail.advanced-help div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -31px -1px;
 }
 
@@ -558,7 +690,7 @@ background: transparent url('../images/menu.png') no-repeat scroll -31px -1px;
 #adminmenu .help div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -31px -33px;
 }
-#adminmenu .expanded.help div.wp-menu-image , #adminmenu .active-trail.help div.wp-menu-image  {
+#adminmenu .help:hover div.wp-menu-image, #adminmenu .expanded.help div.wp-menu-image , #adminmenu .active-trail.help div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -31px -1px;
 }
 
@@ -566,7 +698,7 @@ background: transparent url('../images/menu.png') no-repeat scroll -31px -1px;
 #adminmenu .reports div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -271px -33px;
 }
-#adminmenu .expanded.reports div.wp-menu-image , #adminmenu .active-trail.reports div.wp-menu-image   {
+#adminmenu .reports:hover div.wp-menu-image, #adminmenu .expanded.reports.active-trail div.wp-menu-image , #adminmenu .active-trail.reports div.wp-menu-image   {
 background: transparent url('../images/menu.png') no-repeat scroll -271px -1px;
 }
 
@@ -575,7 +707,7 @@ background: transparent url('../images/menu.png') no-repeat scroll -271px -1px;
 #adminmenu .structure div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -210px -33px;
 }
-#adminmenu .expanded.structure div.wp-menu-image , #adminmenu .active-trail.structure div.wp-menu-image   {
+#adminmenu .structure:hover div.wp-menu-image, #adminmenu .expanded.structure.active-trail div.wp-menu-image , #adminmenu .active-trail.structure div.wp-menu-image   {
 background: transparent url('../images/menu.png') no-repeat scroll -210px -1px;
 }
 
@@ -583,21 +715,21 @@ background: transparent url('../images/menu.png') no-repeat scroll -210px -1px;
 #adminmenu .appearance div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll 0 -33px;
 }
-#adminmenu .expanded.appearance div.wp-menu-image , #adminmenu .active-trail.appearance div.wp-menu-image  {
+#adminmenu .appearance:hover div.wp-menu-image, #adminmenu .expanded.appearance.active-trail div.wp-menu-image , #adminmenu .active-trail.appearance div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll 0 -1px;
 }
 
 #adminmenu .people div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -300px -33px;
 }
-#adminmenu .expanded.people div.wp-menu-image , #adminmenu .active-trail.people div.wp-menu-image  {
+#adminmenu .people:hover div.wp-menu-image, #adminmenu .expanded.people.active-trail div.wp-menu-image , #adminmenu .active-trail.people div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -300px -1px;
 }
 
 #adminmenu .modules div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -180px -33px;
 }
-#adminmenu .expanded.modules div.wp-menu-image , #adminmenu .active-trail.modules div.wp-menu-image  {
+#adminmenu .modules:hover div.wp-menu-image, #adminmenu .expanded.modules.active-trail div.wp-menu-image , #adminmenu .active-trail.modules div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -180px -1px;
 }
 
@@ -605,7 +737,7 @@ background: transparent url('../images/menu.png') no-repeat scroll -180px -1px;
 #adminmenu .configuration div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -240px -33px;
 }
-#adminmenu .expanded.configuration div.wp-menu-image , #adminmenu .active-trail.configuration div.wp-menu-image  {
+#adminmenu .configuration:hover div.wp-menu-image, #adminmenu .expanded.configuration.active-trail div.wp-menu-image , #adminmenu .active-trail.configuration div.wp-menu-image  {
 background: transparent url('../images/menu.png') no-repeat scroll -240px -1px;
 }
 
@@ -625,8 +757,19 @@ font-weight:bold;
 display:none;
 }
 
-div.warning {background-color: lightYellow;
-border-color: #E6DB55; color:#333333;}
+#adminmenu li.level-3:hover {
+background-color: #EAF2FA;
+}
+
+div.warning {
+	background-color: lightYellow;
+	border-color: #E6DB55;
+	color:#333333;
+}
+
+#wpcontent table.update tr.warning div, #wpcontent table.update tr.warning span {
+	color: #E3701A;
+}
 
 /* Admin Tables */
 #wpcontent table, div.admin-panel { width:100%; border-color: #DFDFDF;
@@ -749,3 +892,135 @@ ul.primary li a {
 }
 
 .clear {clear:both;}
+
+/* Local Menu Tabs */
+#content-inner div.tabs {
+	float: left;
+	clear: both;
+	width: 100%;
+}
+#content-inner .tabs.primary, #content-inner .tabs.secondary {
+	margin-left: 0;
+	padding-left: 0;
+	clear: both;
+	width: 100%;
+	list-style: none;
+}
+#content-inner div.tabs {
+	padding-bottom: 20px;
+}
+#content-inner .tabs.primary{
+	border-bottom: 1px solid #6d6d6d;
+	height: 19px;
+}
+#content-inner .tabs.primary li {
+	float: left;
+	font-weight: bold;
+	min-height: 29px;
+	display: block;
+}
+#content-inner .tabs.primary li a {
+	font-weight: bold;
+	line-height: 18px;
+	min-width: 10em;
+	padding: 6px;
+	border-width: 1px 1px 0 1px;
+	border-style: solid;
+	border-color: #6d6d6d;
+	z-index: 30;
+	position: relative;
+	margin-right: 4px;
+}
+#content-inner .tabs.primary li a:first-child {
+	border-width: 1px 1px 0 1px;
+}
+#content-inner .tabs.primary li.active a.active {
+	border-width: 1px 1px 0 1px;
+	text-shadow: 0 -1px 0 #333;
+	color: white;
+	border-color: #6D6D6D !important;
+	background-color: #777;
+	background-image: -ms-linear-gradient(bottom,#6d6d6d,#808080);
+	background-image: -moz-linear-gradient(bottom,#6d6d6d,#808080);
+	background-image: -o-linear-gradient(bottom,#6d6d6d,#808080);
+	background-image: -webkit-gradient(linear,left bottom,left top,from(#6d6d6d),to(#808080));
+	background-image: -webkit-linear-gradient(bottom,#6d6d6d,#808080);
+	background-image: linear-gradient(bottom,#6d6d6d,#808080);
+}
+#content-inner .tabs.secondary {
+	padding-bottom: 15px;
+}
+#content-inner .tabs.secondary li {
+	float: left;
+	padding-left: 10px;
+	margin-left: 10px;
+	border-left: 1px solid #6d6d6d;
+}
+#content-inner .tabs.secondary li:first-child {
+	padding-left: 0;
+	margin-left: 0;
+	border-left: 0;
+}
+#content-inner .tabs.secondary li.active a {
+	color: #6d6d6d;
+	font-weight: bold;
+}
+.element-invisible { display: none; }
+
+/* Small Customizations */
+.page-admin-people td:nth-child(2) a, .page-admin-content td:nth-child(2) a { font-weight: bold; }
+.page-admin-people ul, .page-admin-content ul { list-style: none; }
+
+
+dl.admin-list {
+	border-radius: 3px;
+  margin: 0 0 20px;
+  padding: 0;
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+}
+dl.admin-list dd, dl.admin-list dt {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+dl.admin-list dt {
+	border-top: 1px solid #ccc;
+	padding-top: 10px;
+	font-weight: bold;
+}
+dl.admin-list dt:first-child {
+	padding-top: 0;
+}
+dl.admin-list dd {
+	padding-bottom: 5px;
+}
+dl.admin-list dt:first-child {
+	border-top: 0;
+}
+dl.admin-list h3 {
+  font-size: 0.923em;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 10px;
+  background-image: -ms-linear-gradient(bottom,#DDD,#E9E9E9);
+	background-image: -moz-linear-gradient(bottom,#DDD,#E9E9E9);
+	background-image: -o-linear-gradient(bottom,#DDD,#E9E9E9);
+	background-image: -webkit-gradient(linear,left bottom,left top,from(#DDD),to(#E9E9E9));
+	background-image: -webkit-linear-gradient(bottom,#DDD,#E9E9E9);
+	background-image: linear-gradient(bottom,#DDD,#E9E9E9);
+  border-bottom: 1px solid #CCC;
+  margin-bottom: 10px;
+}
+div.admin-panel,
+div.admin-panel .body {
+  padding: 0;
+  clear: left;
+}
+div.admin-panel {
+  margin: 0 0 20px;
+  padding: 0;
+  background: #f8f8f8;
+  border: 1px solid #ccc;
+  border: 1px solid #CCC;
+}
+div.admin-panel  .admin-list { border: 0; }

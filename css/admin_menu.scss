@@ -1,0 +1,192 @@
+/* Mixins */
+@mixin gradient($top, $bottom) {
+  background: $top; /* Old browsers */
+  background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $top 0%, $bottom 100%); /* IE10+ */
+  background: linear-gradient(top,  $top 0%, $bottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$top},endColorstr=#{$bottom}); /* IE6-9 */
+}
+
+@mixin opacity ($level) {
+  zoom: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";/* IE 8 & 9 */
+  filter: alpha(opacity=50); /* IE 5 - 7 */
+  -moz-opacity: $level / 100; /* Older than Firefox 0.9 */
+  -khtml-opacity: $level / 100; /* Safari 1.x (pre WebKit!) */
+  opacity: $level / 100; /* Firefox 0.9+, Safari 2?, Chrome, Opera 9+, IE 9+ */
+}
+
+@mixin roundCorners ($size) {
+  -moz-border-radius: $size;
+  -webkit-border-radius: $size;
+  border-radius: $size; /* future proofing */
+  -khtml-border-radius: $size; /* for old Konqueror browsers */
+}
+
+@mixin button () {
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -khtml-box-sizing: content-box;
+  box-sizing: content-box;
+  font-weight: bold;
+  color: $purple !important;
+  @include roundCorners (1em);
+  padding: 6px 10px !important;
+  background: #21759B url('/sites/all/themes/at_whri/images/button_grad.png') repeat-x scroll left top;
+  @include gradient(#fff, #ccc );
+  &:hover { @include opacity(80); }
+}
+
+@mixin smallButton () {
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -khtml-box-sizing: content-box;
+  box-sizing: content-box;
+  font-weight: 600;
+  font-size: .8em;
+  color: $purple !important;
+  @include roundCorners (5px);
+  padding: 1px 5px !important;
+  margin-right: 5px;
+  background: #21759B url('/sites/all/themes/at_whri/images/button_grad.png') repeat-x scroll left top;
+  @include gradient(#fff, #ccc );
+  &:hover { @include opacity(80); }
+}
+
+@mixin fullwidth () {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  clear: both;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+@mixin clearfix () {
+  &:after {
+    content: "."; 
+    visibility: hidden; 
+    display: block; 
+    height: 0; 
+    clear: both;
+  }
+}
+
+/* Color Variables */
+$darkgray: #090909;
+$green: #8DC63F;
+$purple: #472f91;
+
+/* Admin Menu */
+body.admin-menu {
+  margin-top: 28px !important;
+}
+
+#admin-menu {
+  @include opacity(100);
+  direction: ltr;
+  color: #CCC;
+  background-color: #464646;
+  background-image: -ms-linear-gradient(bottom,#373737,#464646 5px);
+  background-image: -moz-linear-gradient(bottom,#373737,#464646 5px);
+  background-image: -o-linear-gradient(bottom,#373737,#464646 5px);
+  background-image: -webkit-gradient(linear,left bottom,left top,from(#373737),to(#464646));
+  background-image: -webkit-linear-gradient(bottom,#373737,#464646 5px);
+  background-image: linear-gradient(bottom,#373737,#464646 5px);
+  #admin-menu-wrapper {
+    ul {
+      -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+      -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+      @include opacity(100);
+      li {
+        color: #CCC;
+        border-right: 1px solid #555;
+        li { border-right: 0; }
+        a {
+          text-shadow: #444 0 -1px 0;
+          padding-top: 7px;
+          padding-bottom: 9px;
+          font-size: 1.3em !important;
+          font-family: sans-serif !important;
+          color: #BFBFBF;
+          &:hover {
+            color: #21759B;
+          }
+        }
+        &:hover, .hover {
+          background-color: white;
+          a {
+            text-shadow: none;
+            color: #333;
+            &:hover {
+              color: #21759B;
+            }
+          }
+          ul {
+            -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+            -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            li {
+              background-color: white;
+              &:hover, .hover {
+                background-color: #eaf2fa;
+              }
+              a {
+                text-shadow: none;
+                color: #333;
+                border-top: 0;
+                &:hover {
+                  color: #21759B;
+                }
+              }
+            }
+          }
+        }
+        ul {
+          background-color: white;
+          li {
+            background-color: white;
+            a {
+              text-shadow: none;
+              color: #333;
+              border-top: 0;
+            }
+            ul {
+              background-color: white;
+              margin-top: -28px;
+            }
+          }
+        }
+        &.admin-menu-icon {
+          a {
+            padding-bottom: 1px;
+          }
+          ul {
+            @include opacity(100);
+            li {
+              a {
+                padding-bottom: 9px;
+              }
+            }
+          }
+        }
+        @include opacity(100);
+      }
+    }
+  }
+}

@@ -6,6 +6,9 @@ core        = 7.x
 base theme  = zen
 
 stylesheets[all][]        = css/html-reset.css
+stylesheets[all][]        = css/admin_menu.scss
+
+scripts[]  					      = js/hover_menus.js
 
 regions[help]           = Help
 regions[sidebar_first]  = First sidebar
@@ -40,4 +43,4 @@ settings[zen_wireframes]           = 0
 ; To make this sub-theme an admin theme with shortcut links next to titles,
 ; uncomment the line below.
 
-;settings[shortcut_module_link]    = 1
+settings[shortcut_module_link]    = 1
