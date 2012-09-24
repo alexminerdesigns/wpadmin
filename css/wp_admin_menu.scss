@@ -157,6 +157,19 @@ body.admin-menu {
             }
           }
         }
+        &.admin-menu-account > a {
+          background-color: #464646;
+          background-image: -ms-linear-gradient(bottom,#373737,#464646 5px);
+          background-image: -moz-linear-gradient(bottom,#373737,#464646 5px);
+          background-image: -o-linear-gradient(bottom,#373737,#464646 5px);
+          background-image: -webkit-gradient(linear,left bottom,left top,from(#373737),to(#464646));
+          background-image: -webkit-linear-gradient(bottom,#373737,#464646 5px);
+          background-image: linear-gradient(bottom,#373737,#464646 5px);
+        }
+        &.admin-menu-account:hover > a, &.admin-menu-account > a:hover {
+          background-color: white;
+          background-image: none;
+        }
         ul {
           background-color: white;
           li {
