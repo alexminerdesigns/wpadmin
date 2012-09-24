@@ -6,6 +6,7 @@ core        = 7.x
 base theme  = zen
 
 stylesheets[all][]        = css/html-reset.css
+stylesheets[all][]        = css/wp_editor.css
 stylesheets[all][]        = css/admin_menu.scss
 
 scripts[]  					      = js/hover_menus.js

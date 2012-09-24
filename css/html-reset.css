@@ -333,7 +333,7 @@ margin-left: 0em;
 #wpcontent tr.even {background-color:transparent;}
 
 #wpcontent table th a:hover {color: #333;}
-#wpcontent table thead tr, #wpcontent table th ,.admin-panel h3{
+#wpcontent table thead tr, #wpcontent table th , .admin-panel h3{
  background-color: #F1F1F1;
 background-image: -ms-linear-gradient(top,#f9f9f9,#ececec);
 background-image: -moz-linear-gradient(top,#f9f9f9,#ececec);
@@ -343,6 +343,7 @@ background-image: -webkit-linear-gradient(top,#f9f9f9,#ececec);
 background-image: linear-gradient(top,#f9f9f9,#ececec);
  }
  
+.admin-panel h3{ border-bottom: 1px solid #DFDFDF; }
 
 /* Link Color */ 
 #wpcontent a,  .messages a, #block-system-help a , a.fieldset-title {
@@ -461,7 +462,6 @@ z-index: -1;
 width: 145px;
 }
 
-
 #adminmenu {
 clear: left;
 margin: 0;
@@ -556,10 +556,6 @@ background-image: linear-gradient(bottom,#6d6d6d,#808080);
 	z-index: 666;
 }
 
-#adminmenu li.level-2.expanded:not(.active-trail):hover > a {
-	/*background-color: white !important;*/
-}
-
 #adminmenu li.level-2.expanded:not(.active-trail) ul li a {
 padding: 6px 12px 5px 20px;
 }
@@ -624,6 +620,53 @@ height: 28px;
 z-index: 40;
 position: relative;
 }
+
+@media only screen and (max-width: 800px) {
+	#adminmenuback, #adminmenuwrap, #adminmenu, #adminmenu .wp-submenu, #adminmenu .wp-submenu-wrap, #adminmenu .wp-has-current-submenu .wp-submenu {
+		width: 32px;
+	}
+	#adminmenu a.level-2, body.no-js #adminmenu .wp-menu-toggle, #adminmenu div.wp-menu-toggle {
+		display: none;
+	}
+	#wpcontent {
+		margin-left: 52px;
+	}
+	#adminmenu li.level-2.expanded:not(.active-trail) ul {
+		left: 32px;
+		top: 0;
+		min-width: 10em;
+	}
+	.wp-menu-arrow {
+		-moz-transform: translate(33px);
+		-webkit-transform: translate(33px);
+		-o-transform: translate(33px);
+		-ms-transform: translate(33px);
+		transform: translate(33px);
+	}
+	#admin-menu .dropdown a {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	.admin-menu-account, .admin-menu-users {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 650px) {
+	#admin-menu {
+		display: none;
+	}
+	body.admin-menu.logged-in {
+		margin-top: 0 !important;
+	}
+}
+
+@media only screen and (max-width: 570px) {
+	.filter-guidelines-item ul.tips, .vertical-tabs {
+		display: none;
+	}
+}
+input[type=text] { max-width: 96%; }
 
 #wpcontent h1.title {padding-top: 10px; margin-top:0px; margin-bottom: 5px;
 font-family: "HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",sans-serif;
@@ -1016,6 +1059,86 @@ div.admin-panel .body {
   padding: 0;
   clear: left;
 }
+div.admin-panel .body .body-wrapper {
+	padding: 10px;
+}
+
+#block-wp-admin-dashboard-wp-dashboard-status {
+	width: 100%;
+}
+#block-wp-admin-dashboard-wp-dashboard-status .body-wrapper:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#block-wp-admin-dashboard-wp-dashboard-status .column h4 {
+	padding: 5px 0 8px;
+	margin: 0;
+	color: #8F8F8F;
+	font-size: 14px;
+	font-family: sans-serif;
+	font-weight: normal;
+	line-height: 1.4em;
+	border-bottom: 1px solid #DFDFDF;
+}
+div.admin-panel .body .body-wrapper #wp-status-left, div.admin-panel .body .body-wrapper #wp-status-right {
+	width: 45%;
+}
+div.admin-panel .body .body-wrapper #wp-status-left {
+	padding-right: 5%;	
+	float: left;
+}
+div.admin-panel .body .body-wrapper #wp-status-right {
+	padding-left: 5%;	
+	float: right;
+}
+div.admin-panel .body .body-wrapper .column .wp-status-row {
+	clear: both;
+	padding-top: 10px;
+}
+div.admin-panel .body .body-wrapper .column .wp-status-row:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+div.admin-panel .body .body-wrapper .column .wp-status-row:first-child {
+	padding-top: 0;
+}
+div.admin-panel .body .body-wrapper .column .wp-status-row .wp-status-quantity {
+	text-align: right;
+	float: left;
+	width: 28%;
+	padding-right: 2%;	
+	font-size: 18px;
+	font-family: Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+}
+div.admin-panel .body .body-wrapper .column .wp-status-row .wp-status-label {
+	text-align: left;
+	float: right;
+	width: 68%;
+	padding-left: 2%;
+	padding-top: 5px
+}
+div.admin-panel .body .body-wrapper .column .wp-status-row.wp-status-approved a .wp-status-label {
+	color: green;
+}
+div.admin-panel .body .body-wrapper .column .wp-status-row.wp-status-pending a .wp-status-label {
+	color: #E66F00;
+}
+#block-node-recent .delete a {
+	color: #D54E21;
+}
+#block-node-recent .delete a:hover {
+	color: #222;
+}
+#block-node-recent .node-title {
+	font-weight: bold;
+}
+
 div.admin-panel {
   margin: 0 0 20px;
   padding: 0;
