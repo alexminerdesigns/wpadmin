@@ -621,6 +621,11 @@ z-index: 40;
 position: relative;
 }
 
+@media only screen and (max-width: 920px) {
+	#wpwrap .text-format-wrapper .filter-wrapper ul.tips, #wpwrap .text-format-wrapper .filter-wrapper ul.tips li {max-width: 350px; white-space: normal;}
+	.filter-wrapper .form-item.form-type-select label { display: none; }
+}
+
 @media only screen and (max-width: 800px) {
 	#adminmenuback, #adminmenuwrap, #adminmenu, #adminmenu .wp-submenu, #adminmenu .wp-submenu-wrap, #adminmenu .wp-has-current-submenu .wp-submenu {
 		width: 32px;
@@ -664,6 +669,9 @@ position: relative;
 @media only screen and (max-width: 570px) {
 	.filter-guidelines-item ul.tips, .vertical-tabs {
 		display: none;
+	}
+	#wpwrap .text-format-wrapper .form-type-select {
+		float: left !important;
 	}
 }
 input[type=text] { max-width: 96%; }
