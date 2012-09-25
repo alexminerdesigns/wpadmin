@@ -3,4 +3,4 @@ description = Load WP Themed TinyMCE Editor
 core = 7.x
 package = WP Admin
 
-dependencies[] = wysiwig
+dependencies[] = wysiwyg
