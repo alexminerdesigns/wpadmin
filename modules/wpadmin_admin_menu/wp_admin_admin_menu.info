@@ -1,0 +1,6 @@
+name = WP Admin Admin Menu Theme
+description = Load WP Themed Admin Menu
+core = 7.x
+package = WP Admin
+
+dependencies[] = admin_menu

@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Defines simple link field types.
+ */
+
+
+/**
+ * Implementation of hook_init().
+ */
+function wp_admin_admin_menu_imce_init() {
+  global $user;
+  if ($user->uid != 0) {
+    drupal_add_css(drupal_get_path('module', 'wp_admin_admin_menu') .'/css/wp_admin_admin_menu.css');
+  }
+}

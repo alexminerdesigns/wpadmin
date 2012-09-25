@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Defines simple link field types.
+ */
+
+
+/**
+ * Implementation of hook_init().
+ */
+function wp_admin_tinymce_imce_init() {
+  drupal_add_css(drupal_get_path('module', 'wp_admin_tinymce') .'/css/wp_admin_tinymce.css');
+}

@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Defines simple link field types.
+ */
+
+
+/**
+ * Implementation of hook_preprocess_page().
+ */
+function wp_admin_menu_preprocess_link(&$variables){
+  if($variables['text'] == 'People' && $variables['path'] == 'admin/people'){$variables['text'] = 'Users';}
+  else if($variables['text'] == 'Configuration' && $variables['path'] == 'admin/config') {$variables['text'] = 'Settings';}
+}

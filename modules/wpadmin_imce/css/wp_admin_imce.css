@@ -1,0 +1,159 @@
+/* $Id: imce_kama.css,v 1.5 2010/07/09 13:41:46 mcrittenden Exp $ */
+
+body.imce #log-wrapper,
+body.imce #log-prv-wrapper #log-resizer.x-resizer,
+body.imce #log-clearer {
+  display: none;
+}
+
+body.imce .y-resizer {
+  height: 6px;
+  background-color: white;
+}
+
+body.imce #log-prv-wrapper {
+  border: none;
+  background-color: #EBEBEB;
+}
+
+body.imce #browse-wrapper {
+  -moz-border-radius:5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px #ccc solid;
+}
+
+body.imce table#file-header td:hover,
+body.imce table#file-header td.asc,
+body.imce table#file-header td.desc {
+  cursor: pointer;
+  text-decoration: underline;
+  color: #21759B;
+}
+
+body.imce table#file-header td, #navigation-header span {
+  font-family: Georgia, 'Times New Roman', 'Bitstream Charter', Times, serif;
+  color: #21759B;
+}
+
+body.imce ul.secondary li {
+  border: none;
+}
+
+body.imce #file-list tr:hover,
+body.imce tr.highlight {
+  background-color: #FFFFCC;
+}
+
+body.imce tr.selected td {
+  background-color: #fffaad;
+}
+
+body.imce table#file-list {
+  border-top: 2px solid #C0C0C0;
+}
+
+body.imce table.files td {
+  border-top: 1px solid #C0C0C0;
+  border-bottom: 1px solid #C0C0C0;
+  cursor: pointer;
+  color: #000;
+}
+
+body.imce #file-list tr.selected td {
+background-color: #21759B;
+}
+
+.op-content label, .op-content .form-checkboxes, .op-content .form-checkboxes .form-item {
+  color: #000;
+}
+
+body.imce a,
+body.imce div {
+  outline:none;
+  color: #21759B
+}
+
+body.imce ul.secondary li {
+  margin:0 0.4em;
+  padding: 0px;
+}
+
+body.imce #op-contents .op-content {
+  border: 1px solid #ccc;
+}
+
+body.imce #ops-wrapper {
+  background: transparent;
+  border: none;
+  padding: 5px;
+}
+
+body.imce ul#ops-list li a,
+body.imce ul#ops-list li a:hover,
+body.imce ul#ops-list li a:link,
+body.imce ul#ops-list li a:visited,
+body.imce ul#ops-list li a:active,
+body.imce #imce-content #edit-upload,
+body.imce #imce-content #edit-thumb,
+body.imce #imce-content #edit-resize {
+  -moz-border-radius:5px;
+  -webkit-border-radius: 5px;
+  cursor:pointer;
+  padding:5px 10px;
+  color:#000000;
+  font:12px Arial,Helvetica,Tahoma,Verdana,Sans-Serif;
+  text-align:left;
+  text-decoration:none;
+  white-space:nowrap;
+  width:auto;
+  vertical-align:baseline;
+  height:auto;
+  margin:0 15px 0 0;
+  border-collapse:collapse;
+  border:0 none;
+}
+
+body.imce ul#ops-list li#op-item-delete a,
+body.imce ul#ops-list li#op-item-delete a:hover,
+body.imce ul#ops-list li#op-item-delete a:link,
+body.imce ul#ops-list li#op-item-delete a:visited,
+body.imce ul#ops-list li#op-item-delete a:active {
+}
+
+body.imce ul#ops-list li#op-item-sendto a:link,
+body.imce ul#ops-list li#op-item-sendto a:visited {
+}
+
+body.imce ul#ops-list li a:hover,
+body.imce ul#ops-list li#op-item-sendto a:hover,
+body.imce ul#ops-list li#op-item-delete a:hover,
+body.imce #imce-content #edit-upload:hover,
+body.imce #imce-content #edit-resize:hover,
+body.imce #imce-content #edit-thumb:hover {
+}
+
+body.imce #ops-list a span { padding-left: 12px; }
+
+body.imce #navigation-header span {
+  background: none;
+  padding-left: 5px;
+}
+
+body.imce #navigation-header a.imce-close-nav {
+  float: right;
+  position: relative;
+  top: 3px;
+  right: 5px;
+  color: #888;
+  padding: 2px 6px;
+  text-align: center;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
+
+body.imce #navigation-header a.imce-close-nav:hover {
+  text-decoration: none;
+  background: #ccc;
+}

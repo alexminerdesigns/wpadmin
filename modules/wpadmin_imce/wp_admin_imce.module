@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Defines simple link field types.
+ */
+
+
+/**
+ * Implementation of hook_init().
+ */
+function wp_admin_imce_init() {
+  if ($_GET['q'] == 'imce') {
+    drupal_add_css(drupal_get_path('module', 'wp_admin_imce') .'/css/wp_admin_imce.css');
+    // drupal_add_js(drupal_get_path('module', 'wp_admin_imce') .'/wp_admin_imce.js');
+  }
+}

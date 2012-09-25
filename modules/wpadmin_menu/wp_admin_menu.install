@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function wp_admin_menu_install() {
+	$new_nav = array();
+	
+	// Users
+	$new_nav[] = array(
+    'menu_name'  => 'management',
+    'weight'     => 1,
+    'link_title' => 'Add User',
+    'link_path'  => 'admin/people/create',
+    'module'     => 'wp_admin_menu',
+    'mlid'       => 0,
+    'plid'       => 18,
+  );
+	$new_nav[] = array(
+    'menu_name'  => 'management',
+    'weight'     => 0,
+    'link_title' => 'All Users',
+    'link_path'  => 'admin/people',
+    'module'     => 'wp_admin_menu',
+    'mlid'       => 0,
+    'plid'       => 18,
+  );
+
+  // Content
+	$new_nav[] = array(
+    'menu_name'  => 'management',
+    'weight'     => -100,
+    'link_title' => 'Add Content',
+    'link_path'  => 'node/add',
+    'module'     => 'wp_admin_menu',
+    'mlid'       => 0,
+    'plid'       => 9,
+  );
+
+  // Modules
+	$new_nav[] = array(
+    'menu_name'  => 'management',
+    'weight'     => 0,
+    'link_title' => 'List',
+    'link_path'  => 'admin/modules',
+    'module'     => 'wp_admin_menu',
+    'mlid'       => 0,
+    'plid'       => 16,
+  );
+	$new_nav[] = array(
+    'menu_name'  => 'management',
+    'weight'     => 1,
+    'link_title' => 'Install Module',
+    'link_path'  => 'admin/modules/install',
+    'module'     => 'wp_admin_menu',
+    'mlid'       => 0,
+    'plid'       => 16,
+  );
+  foreach($new_nav as $new_item) {
+	  // Save the item to database.
+	  menu_link_save($new_item);
+	}
+}

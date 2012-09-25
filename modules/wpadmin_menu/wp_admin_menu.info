@@ -1,0 +1,4 @@
+name = WP Admin Menu
+description = Defines side navigation menu items for use with the WP Admin theme
+core = 7.x
+package = WP Admin

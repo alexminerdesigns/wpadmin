@@ -1,0 +1,126 @@
+<?php
+
+/**
+ * @file
+ * Defines simple link field types.
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function wp_admin_dashboard_block_info() {
+  $blocks = array();
+
+  $blocks['wp_dashboard_status'] = array(
+    'info' => t('Right Now'),
+    'status' => 1,
+    'region' => 'content',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => 'admin/dashboard',
+    'properties' => array(
+    	'administrative' => true,
+    ),
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view($delta = '').
+ */
+function wp_admin_dashboard_block_view($delta = '') {
+	$block = array();
+
+	switch ($delta) {
+    case 'wp_dashboard_status':
+			$block['subject'] = t('Right Now');
+			$block['content'] = wp_dashboard_status();
+		break;
+		default:
+		break;
+	}
+
+	return $block;
+}
+
+function wp_dashboard_status() {
+	$block = 
+		'<div id="wp-status-left" class="column">'.
+			'<h4 class="column-header">Content</h4>'.
+			'<div class="wp-status-row wp-status-content">'.
+				'<a href="'.url('admin/content', array('absolute' => TRUE)).'">'.
+					'<div class="wp-status-quantity">'.
+						db_query("SELECT count(nid) FROM {node} WHERE status=1")->fetchField().
+					'</div>'.
+					'<div class="wp-status-label">'.
+						'Content'.
+					'</div>'.
+				'</a>'.
+			'</div>'.
+			'<div class="wp-status-row wp-status-users">'.
+				'<a href="'.url('admin/people', array('absolute' => TRUE)).'">'.
+					'<div class="wp-status-quantity">'.
+						db_query("SELECT count(uid) FROM {users} WHERE status=1")->fetchField().
+					'</div>'.
+					'<div class="wp-status-label">'.
+						'Users'.
+					'</div>'.
+				'</a>'.
+			'</div>'.
+			'<div class="wp-status-row wp-status-vocabularies">'.
+				'<a href="'.url('admin/structure/taxonomy', array('absolute' => TRUE)).'">'.
+					'<div class="wp-status-quantity">'.
+						db_query("SELECT count(vid) FROM {taxonomy_vocabulary}")->fetchField().
+					'</div>'.
+					'<div class="wp-status-label">'.
+						'Vocabularies'.
+					'</div>'.
+				'</a>'.
+			'</div>'.
+			'<div class="wp-status-row wp-status-terms">'.
+				'<a href="'.url('admin/structure/taxonomy', array('absolute' => TRUE)).'">'.
+					'<div class="wp-status-quantity">'.
+						db_query("SELECT count(tid) FROM {taxonomy_term_data}")->fetchField().
+					'</div>'.
+					'<div class="wp-status-label">'.
+						'Terms'.
+					'</div>'.
+				'</a>'.
+			'</div>'.
+		'</div>'.
+		'<div id="wp-status-right" class="column">'.
+			'<h4 class="column-header">Discussion</h4>'.
+			'<div class="wp-status-row wp-status-comments">'.
+				'<a href="'.url('admin/content/comment', array('absolute' => TRUE)).'">'.
+					'<div class="wp-status-quantity">'.
+						db_query("SELECT count(cid) FROM {comment}")->fetchField().
+					'</div>'.
+					'<div class="wp-status-label">'.
+						'Comments'.
+					'</div>'.
+				'</a>'.
+			'</div>'.
+			'<div class="wp-status-row wp-status-approved">'.
+				'<a href="'.url('admin/content/comment', array('absolute' => TRUE)).'">'.
+					'<div class="wp-status-quantity">'.
+						db_query("SELECT count(cid) FROM {comment} WHERE status=1")->fetchField().
+					'</div>'.
+					'<div class="wp-status-label">'.
+						'Approved'.
+					'</div>'.
+				'</a>'.
+			'</div>'.
+			'<div class="wp-status-row wp-status-pending">'.
+				'<a href="'.url('admin/content/comment/approval', array('absolute' => TRUE)).'">'.
+					'<div class="wp-status-quantity">'.
+						db_query("SELECT count(cid) FROM {comment} WHERE status=0")->fetchField().
+					'</div>'.
+					'<div class="wp-status-label">'.
+						'Pending'.
+					'</div>'.
+				'</a>'.
+			'</div>'.
+		'</div>';
+
+	return $block;
+}

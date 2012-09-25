@@ -1,0 +1,6 @@
+name = WP Admin IMCE Theme
+description = Load WP Themed IMCE Browser
+core = 7.x
+package = WP Admin
+
+dependencies[] = imce

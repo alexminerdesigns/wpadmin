@@ -1,0 +1,6 @@
+name = WP Admin Dashboard
+description = Defines blocks for WP dashboard
+core = 7.x
+package = WP Admin
+
+dependencies[] = block
