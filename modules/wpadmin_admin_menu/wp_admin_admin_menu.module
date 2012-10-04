@@ -9,7 +9,7 @@
 /**
  * Implementation of hook_init().
  */
-function wp_admin_admin_menu_imce_init() {
+function wp_admin_admin_menu_init() {
   global $user;
   if ($user->uid != 0) {
     drupal_add_css(drupal_get_path('module', 'wp_admin_admin_menu') .'/css/wp_admin_admin_menu.css');
